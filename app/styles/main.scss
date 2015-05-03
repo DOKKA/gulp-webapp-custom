@@ -2,7 +2,10 @@
 $icon-font-path: '../fonts/';
 
 
+
 @import "bower_components/bootswatch/slate/variables";
+
+
 
 // bower:scss
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -13,6 +16,26 @@ $icon-font-path: '../fonts/';
 
 
 
+html, body {
+  height: 100%;
+}
+body{
+  padding-top: 30px;
+}
+#main {
+  margin: 0;
+  padding: 0;
+}
+.navbar{
+  margin-bottom: 0;
+}
+.navbar-btn.btn.btn-xs {
+  background-color: rgb(62, 68, 76);
+  margin-right: 3px;
+}
+.k-widget{
+  background-color: rgb(46, 51, 56);
+}
 /*
 http://vorotech.blogspot.com/2014/09/yeoman-bootstrap-sass-bootswatch-themes.html
 + // here you can override theme variables
