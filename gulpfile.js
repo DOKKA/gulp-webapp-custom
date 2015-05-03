@@ -5,6 +5,11 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var browserify = require('browserify');
+var coffeeify = require('coffeeify');
+var buffer = require('vinyl-buffer');
+var source = require('vinyl-source-stream');
+
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -22,6 +27,20 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
 });
+
+
+gulp.task('scripts', function() {
+  return browserify({
+    entries: ['./app/scripts/index.coffee'],
+    extensions: ['.coffee']
+  }).transform('coffeeify')
+      .bundle()
+      .pipe(source('bundle.js'))
+      .pipe(buffer())
+      .pipe($.uglify())
+      .pipe(gulp.dest('.tmp/scripts'));
+});
+
 
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/**/*.js')
