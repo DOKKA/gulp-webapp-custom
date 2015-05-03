@@ -1,0 +1,36 @@
+//do I need this?
+$icon-font-path: '../fonts/';
+
+
+@import "bower_components/bootswatch/slate/variables";
+
+// bower:scss
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+@import "bower_components/bootswatch/slate/bootswatch";
+
+
+
+/*
+http://vorotech.blogspot.com/2014/09/yeoman-bootstrap-sass-bootswatch-themes.html
++ // here you can override theme variables
++ // $textColor: #000;
+
++ // import lumen variables
++ @import "bootswatch/lumen/variables";
+
+// bower:scss
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
++ // Bootstrap body padding for fixed navbar
++ body { padding-top: 60px; }
+
++ // load lumen bootswatch style itself
++ @import "bootswatch/lumen/bootswatch";
+
+// Any custom styles goes here
+
+*/

@@ -1,0 +1,28 @@
+{
+  "name": "sc2",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1",
+    "modernizr": "~2.8.1",
+    "backbone": "~1.1.2",
+    "golden-layout": "~1.0.8",
+    "kendo-ui-core": "~2015.1.430",
+    "bootswatch": "~3.3.4+1"
+  },
+  "overrides": {
+    "golden-layout": {
+      "main": [
+        "dist/goldenlayout.min.js",
+        "src/css/goldenlayout-base.css",
+        "src/css/goldenlayout-dark-theme.css"
+      ]
+    },
+    "kendo-ui-core": {
+      "main": [
+        "js/kendo.all.min.js",
+        "styles/kendo.common-bootstrap.core.min.css",
+        "styles/kendo.black.min.css"
+      ]
+    }
+  }
+}
