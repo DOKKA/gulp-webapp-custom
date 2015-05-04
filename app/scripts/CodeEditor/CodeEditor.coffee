@@ -38,7 +38,7 @@ class CodeEditor extends Backbone.View
       panels: [{size: '200px'}]
     });
     that.container.on('resize', ->
-      height = $(that.el).height()-55
+      height = $(that.el).height()-45
       width = $(that.el).width()
       $('.splitter', that.el).css({height: height, width: width})
 
