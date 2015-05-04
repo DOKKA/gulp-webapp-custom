@@ -41,4 +41,11 @@ module.exports =
       </div>
       """
       $(@el).append html
-      $('.jstree', @el).jstree();
+      $('.jstree', @el).jstree(
+        core:
+          themes:
+            name: 'default-dark',
+            dots: true,
+            icons: true
+      );
+

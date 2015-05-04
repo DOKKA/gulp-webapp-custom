@@ -7,7 +7,9 @@ module.exports =
       @render()
 
     render: ->
-      zzz = _.uniqueId()
+      tab1 =  _.uniqueId()
+      tab2 =  _.uniqueId()
+      tab3 =  _.uniqueId()
       html= """
       <div role="tabpanel">
           <!-- Nav tabs , this is all broken -->

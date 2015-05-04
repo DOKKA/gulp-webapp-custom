@@ -26,6 +26,12 @@
         "jqwidgets/jqxbuttons.js",
         "jqwidgets/jqxsplitter.js"
       ]
+    },
+    "jstree":{
+      "main":[
+        "./dist/jstree.js",
+        "./dist/themes/default-dark/style.css"
+	]
     }
   }
 }
