@@ -1,84 +1,87 @@
 <!doctype html>
 <html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sc2</title>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sc2</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/golden-layout/src/css/goldenlayout-base.css" />
-    <link rel="stylesheet" href="/bower_components/golden-layout/src/css/goldenlayout-dark-theme.css" />
-    <link rel="stylesheet" href="/bower_components/kendo-ui-core/styles/kendo.common-bootstrap.core.min.css" />
-    <link rel="stylesheet" href="/bower_components/kendo-ui-core/styles/kendo.black.min.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/golden-layout/src/css/goldenlayout-base.css" />
+  <link rel="stylesheet" href="/bower_components/golden-layout/src/css/goldenlayout-dark-theme.css" />
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" />
+  <link rel="stylesheet" href="/bower_components/jqwidgets/jqwidgets/styles/jqx.bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <nav class="navbar navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Syntax Commander</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Syntax Commander</a>
     </div>
-    </nav>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
 
-    <div id="main"></div>
+<div id="main"></div>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/underscore/underscore.js"></script>
-    <script src="/bower_components/backbone/backbone.js"></script>
-    <script src="/bower_components/golden-layout/dist/goldenlayout.min.js"></script>
-    <script src="/bower_components/kendo-ui-core/js/kendo.all.min.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/backbone/backbone.js"></script>
+<script src="/bower_components/golden-layout/dist/goldenlayout.min.js"></script>
+<script src="/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+<script src="/bower_components/jqwidgets/jqwidgets/jqxbuttons.js"></script>
+<script src="/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
 
-        <!-- build:js scripts/plugins.js -->
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-        <!-- endbuild -->
+<!-- build:js scripts/plugins.js -->
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+<!-- endbuild -->
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/bundle.js"></script>
-        <!--<script type="text/javascript" src=".tmp/"></script>-->
-        <!-- endbuild -->
+<!-- build:js scripts/main.js -->
+
+<script src="scripts/bundle.js"></script>
+<!--<script type="text/javascript" src=".tmp/"></script>-->
+<!-- endbuild -->
 </body>
 </html>

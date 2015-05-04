@@ -42,7 +42,7 @@ resize = ->
   main = $('#main')
   main.css
     width: width
-    height: height - 30
+    height: height - 32
 
 
 

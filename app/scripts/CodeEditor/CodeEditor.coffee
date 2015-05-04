@@ -33,18 +33,21 @@ class CodeEditor extends Backbone.View
     """
     $(@el).append html
     that = @
-    splitter = $('.splitter',@el).kendoSplitter({
-      orientation: 'horizontal',
-      panes: [
-        { collapsible: true, size: "200px" },
-        { collapsible: false}
-      ]
-    })
+    splitter = $('.splitter',@el).jqxSplitter({
+      orientation: 'vertical',
+      panels: [{size: '200px'}]
+    });
     that.container.on('resize', ->
-      splitter.css({height: $(that.el).height()-42})
-      splitter.resize()
+      height = $(that.el).height()-55
+      width = $(that.el).width()
+      $('.splitter', that.el).css({height: height, width: width})
+
+      $('.splitter', that.el).jqxSplitter('expand');
+      #splitter.refresh();
+      #$('.splitter-left',@el).resizable();
+      #splitter.resize()
     )
-    splitter.resize()
+    #splitter.resize()
     @toolbar = new Toolbar({el: $('.panel-heading',@el) })
     @tabpanel = new TabPanel({el: $('.splitter-right',@el) })
     @treepanel = new TreePanel({el: $('.splitter-left',@el) })

@@ -20,7 +20,7 @@ html, body {
   height: 100%;
 }
 body{
-  padding-top: 30px;
+  padding-top: 32px;
 }
 #main {
   margin: 0;
@@ -33,9 +33,22 @@ body{
   background-color: rgb(62, 68, 76);
   margin-right: 3px;
 }
-.k-widget{
-  background-color: rgb(46, 51, 56);
+.jqx-widget{
+  color: $text-color;
 }
+.jqx-widget-content{
+  background-color: $body-bg;
+  border-color:$body-bg;
+}
+.jqx-fill-state-normal{
+  background-color: $navbar-default-bg;
+  border-color: darken($navbar-default-bg, 6.5%);
+}
+.jqx-fill-state-pressed{
+  background-color: $text-color;
+  border-color: $link-color;
+}
+
 /*
 http://vorotech.blogspot.com/2014/09/yeoman-bootstrap-sass-bootswatch-themes.html
 + // here you can override theme variables
