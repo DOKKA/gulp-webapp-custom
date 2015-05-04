@@ -19,11 +19,26 @@ module.exports =
 
           <!-- Tab panes -->
           <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="#{tab1}">
-                  <p>Home Content</p>
-              </div>
+              <div role="tabpanel" class="tab-pane active" id="#{tab1}"></div>
               <div role="tabpanel" class="tab-pane" id="#{tab2}">...</div>
           </div>
       </div>
       """
       $(@el).append html
+      setTimeout( =>
+        height = $(@el).height()-35
+        $('#'+tab1).css({height: height})
+        @editor = ace.edit(tab1)
+        @editor.setTheme('ace/theme/twilight')
+        @editor.getSession().setMode('ace/mode/javascript')
+        @editor.setOptions({
+          fontSize: "16px"
+        });
+      ,30)
+    resize: ->
+      console.log 'this runs'
+      height = $(@el).height()-35
+      width = $(@el).width()
+      if(@editor)
+        $(@editor.container).css({height: height, width: width})
+        @editor.resize()

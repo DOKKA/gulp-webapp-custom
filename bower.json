@@ -8,7 +8,8 @@
     "golden-layout": "~1.0.8",
     "bootswatch": "*",
     "jqwidgets": "*",
-    "jstree": "~3.1.1"
+    "jstree": "~3.1.1",
+    "ace-builds": "~1.1.9"
   },
   "overrides": {
     "golden-layout": {
@@ -27,11 +28,16 @@
         "jqwidgets/jqxsplitter.js"
       ]
     },
-    "jstree":{
-      "main":[
+    "jstree": {
+      "main": [
         "./dist/jstree.js",
         "./dist/themes/default-dark/style.css"
-	]
+      ]
+    },
+    "ace-builds": {
+      "main": [
+        "src-noconflict/ace.js"
+      ]
     }
   }
 }
