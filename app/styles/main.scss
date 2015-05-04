@@ -49,6 +49,12 @@ body{
   border-color: $link-color;
 }
 
+.jstree{
+  //do I even need this?
+  //webstorm doesn't have it...
+  overflow: auto;
+}
+
 /*
 http://vorotech.blogspot.com/2014/09/yeoman-bootstrap-sass-bootswatch-themes.html
 + // here you can override theme variables

@@ -29,6 +29,16 @@ module.exports =
               </ul>
           </div>
       </nav>
-      <p>some content goes here</p>
+      <div class="jstree">
+        <ul>
+          <li>Root node
+            <ul>
+              <li>Child node 1</li>
+              <li>Child node 2</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
       """
       $(@el).append html
+      $('.jstree', @el).jstree();
