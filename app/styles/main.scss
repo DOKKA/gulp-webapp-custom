@@ -52,7 +52,7 @@ body{
 .jstree{
   //do I even need this?
   //webstorm doesn't have it...
-  overflow: auto;
+  overflow: hidden;
 }
 .jstree-default-dark{
   background-color: $body-bg;
