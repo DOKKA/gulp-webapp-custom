@@ -37,9 +37,9 @@ class CodeEditor extends Backbone.View
       orientation: 'vertical',
       panels: [{size: '200px'}]
     });
-    #splitter.on('resize', ->
-      #if(that.tabpanel)
-        #that.tabpanel.resize())
+    splitter.on('resize', ->
+      if(that.tabpanel)
+        that.tabpanel.resize())
     that.container.on('resize', ->
       height = $(that.el).height()-45
       width = $(that.el).width()
