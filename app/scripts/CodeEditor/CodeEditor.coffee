@@ -49,7 +49,7 @@ module.exports =
           height = $(@el).height()-45
           width = $(@el).width()
           $('.panel', @el).css({height: height, width: width})
-          $('.splitter', @el).jqxSplitter('refresh')
+          $('.splitter', @el).jqxSplitter('render')
           if(@tabpanel)
             @tabpanel.resize())
         @toolbar = new Toolbar({el: $('.panel-heading',@el) })
