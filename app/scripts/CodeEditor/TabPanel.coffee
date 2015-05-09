@@ -43,7 +43,8 @@ module.exports =
       tabContainer = @$('.tab-content')
       navTabTemplate = """
         <li role="presentation">
-        <a href="##{tabId}" aria-controls="#{tabId}" role="tab" data-toggle="tab">#{tabId}.js</a>
+        <a href="##{tabId}" aria-controls="#{tabId}" role="tab" data-toggle="tab">#{tabId}.js
+        </a>
         </li>
       """
       tabContentTemplate = """
@@ -53,8 +54,19 @@ module.exports =
       tabContainer.append(tabContentTemplate)
 
       navtab = @$('.nav-tabs a:last')
+      navtab.css({'padding-right': '25px'});
+
       tab = @$('#'+tabId)
       navtab.tab('show')
-      @tabs.push(new EditorTab({el: tab, navtab: navtab}))
+      editorTab = new EditorTab({el: tab, navtab: navtab})
+      @tabs.push(editorTab)
 
+      liNav = navtab.parent();
+      closebtn = $('<span class="glyphicon glyphicon-remove-circle close-tab" aria-hidden="true"></span>').appendTo(liNav)
+
+      closebtn.click ->
+        tab.remove()
+        navtab.remove()
+        @$('.nav-tabs a:last').show()
+        #editorTab.editor.destroy()
 
