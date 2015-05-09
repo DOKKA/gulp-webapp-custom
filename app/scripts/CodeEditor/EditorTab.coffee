@@ -3,14 +3,15 @@ module.exports =
   class EditorTab extends Backbone.View
 
     initialize: (opts) ->
+      @navtab = opts.navtab
       _.bindAll @, 'render'
       @render()
 
     render: ->
-      zzz = _.uniqueId()
-      html= """
-      <div>
-      </div>
-      """
-      $(@el).append html
-
+      @navtab.append('<span>x</span>')
+      @editor = ace.edit(@el)
+      @editor.setTheme('ace/theme/monokai')
+      @editor.getSession().setMode('ace/mode/javascript')
+      @editor.setOptions({
+        fontSize: "14px"
+      });

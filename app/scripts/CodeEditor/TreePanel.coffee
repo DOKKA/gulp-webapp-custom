@@ -40,7 +40,7 @@ module.exports =
         </ul>
       </div>
       """
-      $(@el).append html
+      $(@el).html html
       $('.jstree', @el).jstree(
         core:
           themes:

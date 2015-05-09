@@ -31,7 +31,7 @@ module.exports =
         </div>
     </div>
     """
-      $(@el).append html
+      $(@el).html html
       setTimeout(=>
         height = $(@el).height()-45
         width = $(@el).width()
@@ -53,8 +53,18 @@ module.exports =
           if(@tabpanel)
             @tabpanel.resize())
         @toolbar = new Toolbar({el: $('.panel-heading',@el) })
+        @toolbar.parent = () =>
+          return @
+
         @tabpanel = new TabPanel({el: $('.splitter-right',@el) })
+        @tabpanel.parent = () =>
+          return @
+
         @treepanel = new TreePanel({el: $('.splitter-left',@el) })
+        @treepanel.parent = () =>
+          return @
+
+        @tabpanel.newTab()
       ,10)
 
 

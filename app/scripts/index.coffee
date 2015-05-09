@@ -11,8 +11,15 @@ config = content: [{
       type: 'component'
       componentName: 'example'
       componentState: text: 'Component 1'
+    },{
+      type: 'component'
+      componentName: 'example'
+      componentState: text: 'Component 1'
+    },{
+      type: 'component'
+      componentName: 'example'
+      componentState: text: 'Component 1'
     }
-
   ]
 }]
 
