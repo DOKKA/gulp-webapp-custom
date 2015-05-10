@@ -28,6 +28,14 @@ module.exports =
         height = $(@el).height()-30
         width = $(@el).width()-5
         $('.tab-content', @el).css({height: height, width: width})
+        $('.nav-tabs', @el).sortable({
+          #axis: 'x',
+          delay: 150,
+          helper: 'clone',
+          appendTo: 'body',
+          zIndex: 1000,
+          connectWith: '.nav-tabs'
+        })
       ,10)
 
     resize: ->
@@ -64,9 +72,9 @@ module.exports =
       liNav = navtab.parent();
       closebtn = $('<span class="glyphicon glyphicon-remove-circle close-tab" aria-hidden="true"></span>').appendTo(liNav)
 
-      closebtn.click ->
+      closebtn.click =>
+        liNav.remove()
+        editorTab.editor.destroy()
         tab.remove()
-        navtab.remove()
-        @$('.nav-tabs a:last').show()
-        #editorTab.editor.destroy()
+        @$('.nav-tabs a:last').tab('show')
 
