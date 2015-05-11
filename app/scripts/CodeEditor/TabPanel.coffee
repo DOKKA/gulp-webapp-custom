@@ -13,7 +13,7 @@ module.exports =
       html= """
       <div role="tabpanel" style="height: 100%; width: 100%">
           <!-- Nav tabs -->
-          <ul class="nav nav-tabs" role="tablist">
+          <ul class="nav nav-tabs" role="tablist" style="min-height: 30px;">
 
           </ul>
 
