@@ -33,7 +33,9 @@ myLayout.registerComponent 'example', (container, state) ->
   })
   panel.getPanels = -> panels
   panels.push(panel)
-
+  container.on('destroy', ->
+    panel.remove()
+    panels = _.without(panels, panel))
 
 
 resize = ->
