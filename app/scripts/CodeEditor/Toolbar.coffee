@@ -4,69 +4,96 @@ module.exports =
 
     initialize: (opts) ->
       _.bindAll @, 'render'
+      @items = [[{
+        name: 'Save',
+        icon: 'floppy-disk',
+      },{
+        name: 'Save All',
+        icon: 'floppy-saved',
+      }],[{
+        name: 'Undo',
+        icon: 'arrow-left',
+      },{
+        name: 'Redo',
+        icon: 'arrow-right'
+      }],[{
+        name: 'Toggle Comment',
+        icon: 'object-align-left'
+      }],[{
+        name: 'Toggle Autocomplete',
+        icon: 'tasks'
+      }],[{
+        name: 'Cut',
+        icon: 'scissors'
+      },{
+        name: 'Copy',
+        icon: 'duplicate'
+      },{
+        name: 'Paste',
+        icon: 'paste'
+      }],[{
+        name: 'Revert',
+        icon: 'refresh'
+      },{
+        name: 'Close',
+        icon: 'remove-circle'
+      }]]
       @render()
 
-    events:
-      'click .new-file': 'newFile'
+    #events:
+      #'click .new-file': 'newFile'
 
     render: ->
-      zzz = _.uniqueId()
-      html= """
-      <div class="btn-toolbar" role="toolbar">
-          <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-          </div>
-          <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-          </div>
-          <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-sm" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-              </button>
-          </div>
-          <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default btn-sm new-file" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
-              </button>
-          </div>
-          <!-- Single button -->
-          <div class="btn-group pull-right" role="group">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+      #make both lists and hide one!
+
+      html = """<div class="btn-toolbar" role="toolbar">"""
+      for buttonGroup in @items
+        html += """<div class="btn-group toolbar-button" role="group">"""
+        for button in buttonGroup
+          button.id = _.uniqueId('btn')
+          html += """
+            <button type="button" id="#{button.id}" title="#{button.name}"class="btn btn-default btn-sm" aria-label="Left Align">
+              <span class="glyphicon glyphicon-#{button.icon}" aria-hidden="true"></span>
             </button>
+          """
+        html += """</div>"""
+
+      html += """
+        <div class="btn-group toolbar-list" role="group">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>&nbsp;&nbsp;Save</a></li>
-            </ul>
-          </div>
-      </div>
       """
+      for buttonGroup in @items
+        for button in buttonGroup
+          html += """
+            <li><a href="#"><span class="glyphicon glyphicon-#{button.icon}" aria-hidden="true">
+            </span>&nbsp;&nbsp;#{button.name}</a></li>
+          """
+        html += """<li class="divider"></li>"""
+
+      html += """</ul>"""
+      html += """</div>"""
+
+      html += """</div>"""
+
       $(@el).html html
+      setTimeout(=>
+        @resize()
+      ,10)
 
     resize: ->
-      #once it gets past a certain width, put them all in a list on the right.
-      console.log(@$el.width())
+      width = @$el.width()
+      if(width < 400 && width != 0)
+        @$('.toolbar-list').show()
+        @$('.toolbar-button').hide()
+      else
+        @$('.toolbar-list').hide()
+        @$('.toolbar-button').show()
 
     newFile: ->
       @parent().tabpanel.newTab()
+
+
+
