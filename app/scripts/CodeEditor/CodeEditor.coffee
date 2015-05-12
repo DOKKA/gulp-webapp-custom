@@ -45,13 +45,17 @@ module.exports =
         splitter.on('resize', =>
           if(@tabpanel)
             @tabpanel.resize())
+
         @container.on('resize', =>
           height = $(@el).height()-45
           width = $(@el).width()
           $('.panel', @el).css({height: height, width: width})
           $('.splitter', @el).jqxSplitter('render')
           if(@tabpanel)
-            @tabpanel.resize())
+            @tabpanel.resize()
+          if(@toolbar)
+            @toolbar.resize()
+        )
         @toolbar = new Toolbar({el: $('.panel-heading',@el) })
         @toolbar.parent = () =>
           return @
