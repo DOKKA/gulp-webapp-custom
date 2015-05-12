@@ -35,6 +35,8 @@ module.exports =
           appendTo: 'body',
           zIndex: 1000,
           connectWith: '.nav-tabs'
+          receive: (e) ->
+            console.log e
         })
       ,10)
 
