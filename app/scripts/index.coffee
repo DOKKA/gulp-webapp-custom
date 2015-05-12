@@ -26,11 +26,13 @@ config = content: [{
 myLayout = new GoldenLayout(config, $('#main'))
 myLayout.registerComponent 'example', (container, state) ->
   console.log 'new container'
-  new CodeEditor({
-    el: container.getElement()
+  panel = new CodeEditor({
+    el: container.getElement(),
     container: container,
     state: state
   })
+  panel.getPanels = -> panels
+  panels.push(panel)
 
 
 

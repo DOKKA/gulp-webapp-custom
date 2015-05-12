@@ -11,6 +11,10 @@ module.exports =
         name: 'Save All',
         icon: 'floppy-saved',
       }],[{
+        name: 'New File',
+        icon: 'file',
+        cls: 'new-file'
+      }],[{
         name: 'Undo',
         icon: 'arrow-left',
       },{
@@ -40,8 +44,8 @@ module.exports =
       }]]
       @render()
 
-    #events:
-      #'click .new-file': 'newFile'
+    events:
+      'click .new-file': 'newFile'
 
     render: ->
       #make both lists and hide one!
@@ -52,7 +56,7 @@ module.exports =
         for button in buttonGroup
           button.id = _.uniqueId('btn')
           html += """
-            <button type="button" id="#{button.id}" title="#{button.name}"class="btn btn-default btn-sm" aria-label="Left Align">
+            <button type="button" id="#{button.id}" title="#{button.name}"class="btn btn-default btn-sm #{button.cls || ''}" aria-label="Left Align">
               <span class="glyphicon glyphicon-#{button.icon}" aria-hidden="true"></span>
             </button>
           """

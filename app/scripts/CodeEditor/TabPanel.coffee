@@ -5,7 +5,7 @@ module.exports =
   class TabPanel extends Backbone.View
 
     initialize: (opts) ->
-      _.bindAll @, 'render'
+      _.bindAll @, 'render', 'receiveFn'
       @render()
       @tabs = []
 
@@ -35,10 +35,30 @@ module.exports =
           appendTo: 'body',
           zIndex: 1000,
           connectWith: '.nav-tabs'
-          receive: (e) ->
-            console.log e
+          receive: @receiveFn
         })
       ,10)
+
+    receiveFn: (e, ui) ->
+      console.log 'received!'
+      tabId = ui.item.find('a').attr('href').substr(1)
+      console.log tabId
+      for codeeditor in @parent().getPanels()
+        tab = codeeditor.tabpanel.hasTab(tabId)
+        if tab
+          codeeditor.tabpanel.tabs = _.without(codeeditor.tabpanel.tabs, tab)
+          @tabs.push(tab)
+          tab.$el.detach().appendTo(@$('.tab-content'))
+          @$('.nav-tabs li').removeClass('active')
+          tab.navtab.tab('show')
+          console.log codeeditor.tabpanel.tabs
+          return
+
+
+    hasTab: (id) ->
+      for tab in @tabs
+        if tab.$el.attr('id') == id
+          return tab
 
     resize: ->
       height = $(@el).height()-30
