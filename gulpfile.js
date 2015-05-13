@@ -84,12 +84,25 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('extras', function () {
-  return gulp.src([
+  gulp.src([
     'app/*.*',
     '!app/*.html'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
+
+  gulp.src([
+    'bower_components/ace-builds/src-noconflict/**/*'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist/bower_components/ace-builds/src-noconflict/'));
+
+  gulp.src([
+    'bower_components/jstree/dist/themes/default-dark/*'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist/styles/'));
+
 });
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));

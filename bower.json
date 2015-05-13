@@ -35,11 +35,6 @@
         "./dist/themes/default-dark/style.css"
       ]
     },
-    "ace-builds": {
-      "main": [
-        "src-noconflict/ace.js"
-      ]
-    },
     "jquery.ui":{
       "main":[
         "ui/core.js",
